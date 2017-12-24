@@ -17,7 +17,7 @@ function highlight(text, segments, defaultClass) {
   'use strict'
 
   defaultClass = typeof defaultClass === 'undefined'
-    ? 'highlight' : defaultClass
+    ? 'vala' : defaultClass
 
   var vertices = []
 
