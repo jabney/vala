@@ -1,0 +1,35 @@
+{
+  "name": "vala",
+  "version": "0.1.0",
+  "description": "Generate HTML markup for highlighting segments of text",
+  "main": "vala.js",
+  "scripts": {
+    "build-demo": "webpack --watch --config demo/webpack.config.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jabney/highlighter.git"
+  },
+  "keywords": [
+    "html",
+    "highlight"
+  ],
+  "author": "James Abney",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jabney/highlighter/issues"
+  },
+  "homepage": "https://github.com/jabney/highlighter#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^2.30.1",
+    "jest": "^22.0.3",
+    "jquery": "^3.2.1",
+    "nodemon": "^1.14.0",
+    "webpack": "^3.10.0"
+  },
+  "files": [
+    "vala.js",
+    "demo"
+  ]
+}
