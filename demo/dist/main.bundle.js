@@ -68,7 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 const $ = __webpack_require__(1)
-const highlighter = __webpack_require__(2)
+const vala = __webpack_require__(2)
 
 const highlights = []
 const classes = ['', 'highlight', 'underline', 'overline']
@@ -91,7 +91,7 @@ $('p').on('mouseup', function() {
       data: {id: id}
     })
 
-    this.innerHTML = highlighter($(this).text(), highlights, 'vala')
+    this.innerHTML = vala($(this).text(), highlights, 'vala')
 
     $('.vala').each(function () {
       $(this).attr('title', 'id: ' + this.dataset.id)
@@ -10409,11 +10409,11 @@ return jQuery;
  * @param {Segment[]} segments
  * @param {string} [defaultClass]
  */
-function highlight(text, segments, defaultClass) {
+function vala(text, segments, defaultClass) {
   'use strict'
 
   defaultClass = typeof defaultClass === 'undefined'
-    ? 'highlight' : defaultClass
+    ? 'vala' : defaultClass
 
   var vertices = []
 
@@ -10519,7 +10519,7 @@ function wrap(str, tag, cls, data, defCls) {
 
 // console.log(highlighted)
 
-module.exports = highlight
+module.exports = vala
 
 
 /***/ })

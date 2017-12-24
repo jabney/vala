@@ -1,5 +1,5 @@
 const $ = require('jquery')
-const highlighter = require('../../vala')
+const vala = require('../../vala')
 
 const highlights = []
 const classes = ['', 'highlight', 'underline', 'overline']
@@ -22,7 +22,7 @@ $('p').on('mouseup', function() {
       data: {id: id}
     })
 
-    this.innerHTML = highlighter($(this).text(), highlights, 'vala')
+    this.innerHTML = vala($(this).text(), highlights, 'vala')
 
     $('.vala').each(function () {
       $(this).attr('title', 'id: ' + this.dataset.id)

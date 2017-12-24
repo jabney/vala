@@ -13,7 +13,7 @@
  * @param {Segment[]} segments
  * @param {string} [defaultClass]
  */
-function highlight(text, segments, defaultClass) {
+function vala(text, segments, defaultClass) {
   'use strict'
 
   defaultClass = typeof defaultClass === 'undefined'
@@ -123,4 +123,4 @@ function wrap(str, tag, cls, data, defCls) {
 
 // console.log(highlighted)
 
-module.exports = highlight
+module.exports = vala
