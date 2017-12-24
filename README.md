@@ -6,3 +6,7 @@ Generate HTML markup for highlighting segments of text
 </div> -->
 
 ![vala](https://github.com/jabney/vala/raw/master/assets/vala.png)
+
+![vala demo animation](https://github.com/jabney/vala/raw/master/assets/vala.gif)
+
+**Under development**
