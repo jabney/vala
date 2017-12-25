@@ -10412,6 +10412,7 @@ return jQuery;
  * @property {number} [length]
  * @property {string} [tag]
  * @property {string} [cls]
+ * @property {string} [attrs]
  * @property {Object} [data]
  */
 
