@@ -10,3 +10,7 @@ Generate HTML markup for highlighting segments of text
 ![vala demo animation](https://github.com/jabney/vala/raw/master/assets/vala.gif)
 
 **Under development**
+
+See the [demo source](https://github.com/jabney/vala/tree/master/demo/src) folder for example usage.
+
+Open [index.html](https://github.com/jabney/vala/tree/master/demo/dist) in the [dist](https://github.com/jabney/vala/tree/master/demo/dist) folder to see the demo project in action. (Switch highlight styles with the 1, 2, and 3 keys).
