@@ -20,11 +20,11 @@ paragraph.on('mouseup', function(e) {
       start: getNormalizedOffset(this, range),
       length: range.toString().length,
       cls: classes[currentCls],
+      attrs: {title: 'id: ' + id},
       data: {id: id}
     })
 
     this.innerHTML = vala($(this).text(), Array.from(highlights.values()))
-    addTitles()
     e.stopPropagation()
   }
 })
@@ -33,7 +33,6 @@ $('body').on('mouseup', '.vala', function (e) {
   // Remove the highlight.
   highlights.delete(+this.dataset.id)
   paragraph.html(vala(paragraph.text(), Array.from(highlights.values())))
-  addTitles()
   e.stopPropagation()
 })
 
@@ -42,12 +41,6 @@ $(document).on('keyup', function (e) {
     currentCls = e.key
   }
 })
-
-function addTitles() {
-  $('.vala').each(function () {
-    $(this).attr('title', 'id: ' + this.dataset.id)
-  })
-}
 
 /**
  * @param {HTMLElement} parent
