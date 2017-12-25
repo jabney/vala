@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jabney/highlighter.git"
+    "url": "git+https://github.com/jabney/vala.git"
   },
   "keywords": [
     "html",
@@ -18,9 +18,9 @@
   "author": "James Abney",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jabney/highlighter/issues"
+    "url": "https://github.com/jabney/vala/issues"
   },
-  "homepage": "https://github.com/jabney/highlighter#readme",
+  "homepage": "https://github.com/jabney/vala#readme",
   "devDependencies": {
     "html-webpack-plugin": "^2.30.1",
     "jest": "^22.0.3",
