@@ -10439,6 +10439,7 @@ function vala(text, segments, defaultClass) {
       pos: section.start,
       tag: section.tag,
       cls: section.cls,
+      attrs: section.attrs,
       data: section.data,
       group: i
     },{
@@ -10473,7 +10474,7 @@ function vala(text, segments, defaultClass) {
       var section = text.slice(a[i].pos, a[i+1].pos)
       if (section) {
         list.push(vertices.reduce(function (str, v) {
-          return wrap(str, v.tag || 'span', v.cls, v.data, defaultClass)
+          return wrap(str, v, defaultClass)
         }, section))
       }
     }
@@ -10491,21 +10492,26 @@ function vala(text, segments, defaultClass) {
 
 /**
  * @param {string} str
- * @param {string} tag
- * @param {string} cls
- * @param {Object} data
+ * @param {Object} v
  * @param {string} defCls
  */
-function wrap(str, tag, cls, data, defCls) {
-  var template = '<#{tag}#{data}>' + str + '</' + tag + '>'
-  var clsStr = ((defCls || '') + ' ' + (cls || '')).trim()
+function wrap(str, v, defCls) {
+  var tag = v.tag || 'span'
 
-  var dataStr = Object.keys(data || {}).reduce(function (str, key) {
-    return str + ' data-' + key + '="' + data[key] + '"'
+  var template = '<#{tag}#{attrs}#{data}>' + str + '</' + tag + '>'
+  var clsStr = ((defCls || '') + ' ' + (v.cls || '')).trim()
+
+  var attrStr = Object.keys(v.attrs || {}).reduce(function (str, key) {
+    return str + ' ' + key + '="' + v.attrs[key] + '"'
+  }, '')
+
+  var dataStr = Object.keys(v.data || {}).reduce(function (str, key) {
+    return str + ' data-' + key + '="' + v.data[key] + '"'
   }, '')
 
   return template
     .replace('#{tag}', clsStr ? tag + ' class="' + clsStr + '"' : tag)
+    .replace('#{attrs}', attrStr)
     .replace('#{data}', dataStr)
 }
 
