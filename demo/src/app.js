@@ -83,4 +83,6 @@ function getNormalizedOffset(parent, range) {
       stack = stack.concat(childNodes.reverse())
     }
   }
+
+  return -1
 }
