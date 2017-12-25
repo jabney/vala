@@ -81,7 +81,6 @@ $('p').on('mouseup', function() {
   if (!selection.isCollapsed) {
     const range = selection.getRangeAt(0)
     const start = getNormalizedOffset(this, range)
-    const end = start + range.toString().length
     const id = nextId++
 
     highlights.push({
