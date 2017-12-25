@@ -8,6 +8,7 @@ let highlights = new Map()
 let currentCls = 1
 let nextId = 0
 
+// Get a jquery reference to the host paragraph.
 const paragraph = $('p.host')
 
 // Monitor the paragraph for mouseup events.
