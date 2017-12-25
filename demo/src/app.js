@@ -22,7 +22,7 @@ $('p').on('mouseup', function() {
       data: {id: id}
     })
 
-    this.innerHTML = vala($(this).text(), highlights, 'vala')
+    this.innerHTML = vala($(this).text(), highlights)
 
     $('.vala').each(function () {
       $(this).attr('title', 'id: ' + this.dataset.id)
