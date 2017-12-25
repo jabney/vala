@@ -98,29 +98,4 @@ function wrap(str, tag, cls, data, defCls) {
     .replace('#{data}', dataStr)
 }
 
-// var highlighted = highlight('abcdefghijklmnopqrstuvwxyz', [{
-//   start: 2,
-//   length: 20, // c-v
-//   tag: 'a',
-//   // cls: 'a'
-// },{
-//   start: 5,
-//   length: 10, // f-o
-//   tag: 'b',
-//   // cls: 'b'
-
-// //   start: 1,
-// //   length: 10, // b-k
-// //   tag: 'a',
-// //   // cls: 'a'
-// // },{
-// //   start: 5,
-// //   length: 20, // f-y
-// //   tag: 'b',
-// //   // cls: 'b'
-
-// }], null)
-
-// console.log(highlighted)
-
 module.exports = vala
