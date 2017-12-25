@@ -1,12 +1,15 @@
 const $ = require('jquery')
 const vala = require('../../vala')
 
-const highlights = []
 const classes = ['', 'highlight', 'underline', 'overline']
+
+let highlights = new Map()
 let currentCls = 1
 let nextId = 0
 
-$('p').on('mouseup', function() {
+const paragraph = $('p.host')
+
+paragraph.on('mouseup', function(e) {
   const selection = document.getSelection()
 
   if (!selection.isCollapsed) {
@@ -14,23 +17,32 @@ $('p').on('mouseup', function() {
     const start = getNormalizedOffset(this, range)
     const id = nextId++
 
-    highlights.push({
+    highlights.set(id, {
       start,
       length: range.toString().length,
       cls: classes[currentCls],
       data: {id: id}
     })
 
-    this.innerHTML = vala($(this).text(), highlights)
+    this.innerHTML = vala($(this).text(), Array.from(highlights.values()))
 
     $('.vala').each(function () {
       $(this).attr('title', 'id: ' + this.dataset.id)
     })
+
+    e.stopPropagation()
   }
 })
 
+$('body').on('mouseup', '.vala', function (e) {
+  // Remove the highlight.
+  highlights.delete(+this.dataset.id)
+  paragraph.html(vala(paragraph.text(), Array.from(highlights.values())))
+  e.stopPropagation()
+})
+
 $(document).on('keyup', function (e) {
-  if (/\d/.test(e.key) && e.key > '0' && e.key < classes.length) {
+  if (/\d/.test(e.key) && e.key > '0' && +e.key < classes.length) {
     currentCls = e.key
   }
 })
