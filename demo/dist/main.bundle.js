@@ -91,7 +91,7 @@ $('p').on('mouseup', function() {
       data: {id: id}
     })
 
-    this.innerHTML = vala($(this).text(), highlights, 'vala')
+    this.innerHTML = vala($(this).text(), highlights)
 
     $('.vala').each(function () {
       $(this).attr('title', 'id: ' + this.dataset.id)
@@ -10493,31 +10493,6 @@ function wrap(str, tag, cls, data, defCls) {
     .replace('#{tag}', clsStr ? tag + ' class="' + clsStr + '"' : tag)
     .replace('#{data}', dataStr)
 }
-
-// var highlighted = highlight('abcdefghijklmnopqrstuvwxyz', [{
-//   start: 2,
-//   length: 20, // c-v
-//   tag: 'a',
-//   // cls: 'a'
-// },{
-//   start: 5,
-//   length: 10, // f-o
-//   tag: 'b',
-//   // cls: 'b'
-
-// //   start: 1,
-// //   length: 10, // b-k
-// //   tag: 'a',
-// //   // cls: 'a'
-// // },{
-// //   start: 5,
-// //   length: 20, // f-y
-// //   tag: 'b',
-// //   // cls: 'b'
-
-// }], null)
-
-// console.log(highlighted)
 
 module.exports = vala
 
