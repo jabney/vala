@@ -16,6 +16,10 @@
 function vala(text, segments, defaultClass) {
   'use strict'
 
+  if (!(Array.isArray(segments) && segments.length)) {
+    return text
+  }
+
   defaultClass = typeof defaultClass === 'undefined'
     ? 'vala' : defaultClass
 
