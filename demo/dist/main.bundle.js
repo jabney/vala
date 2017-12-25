@@ -83,22 +83,17 @@ paragraph.on('mouseup', function(e) {
 
   if (!selection.isCollapsed) {
     const range = selection.getRangeAt(0)
-    const start = getNormalizedOffset(this, range)
     const id = nextId++
 
     highlights.set(id, {
-      start,
+      start: getNormalizedOffset(this, range),
       length: range.toString().length,
       cls: classes[currentCls],
       data: {id: id}
     })
 
     this.innerHTML = vala($(this).text(), Array.from(highlights.values()))
-
-    $('.vala').each(function () {
-      $(this).attr('title', 'id: ' + this.dataset.id)
-    })
-
+    addTitles()
     e.stopPropagation()
   }
 })
@@ -107,6 +102,7 @@ $('body').on('mouseup', '.vala', function (e) {
   // Remove the highlight.
   highlights.delete(+this.dataset.id)
   paragraph.html(vala(paragraph.text(), Array.from(highlights.values())))
+  addTitles()
   e.stopPropagation()
 })
 
@@ -115,6 +111,12 @@ $(document).on('keyup', function (e) {
     currentCls = e.key
   }
 })
+
+function addTitles() {
+  $('.vala').each(function () {
+    $(this).attr('title', 'id: ' + this.dataset.id)
+  })
+}
 
 /**
  * @param {HTMLElement} parent
