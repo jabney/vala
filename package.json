@@ -4,6 +4,8 @@
   "description": "Generate HTML markup for highlighting segments of text",
   "main": "vala.js",
   "scripts": {
+    "start": "npm run build-jquery & npm run build-demo",
+    "build-jquery": "webpack --watch --config webpack.jquery.js",
     "build-demo": "webpack --watch --config demo/webpack.config.js",
     "test": "jest"
   },
