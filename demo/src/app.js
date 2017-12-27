@@ -1,5 +1,5 @@
-const $ = require('jquery')
 const vala = require('../../vala')
+const utils = require('../../lib/utils')
 
 const classes = ['', 'highlight', 'underline', 'overline']
 
@@ -24,7 +24,7 @@ paragraph.on('mouseup', function(e) {
 
     // Feed the highlights map with a new highlight.
     highlights.set(id, {
-      start: getNormalizedOffset(this, range),
+      start: utils.rangeStartOffset(this, range),
       length: range.toString().length,
       cls: classes[currentCls],
       attrs: {title: 'id: ' + id},
@@ -33,7 +33,7 @@ paragraph.on('mouseup', function(e) {
 
     // Set the html of this paragraph to the string returned by vala.
     this.innerHTML = vala($(this).text(), Array.from(highlights.values()))
-    e.stopPropagation()
+    // e.stopPropagation()
   }
 })
 
@@ -53,37 +53,3 @@ $(document).on('keyup', function (e) {
     currentCls = key
   }
 })
-
-/**
- * Iterate the given 'parent' node's children and find the length
- * of the selection range's actual start. We have to do this because
- * if the range begins inside of a child element, the range start will
- * be relative to that child node and not to the parent.
- *
- * @param {HTMLElement} parent
- * @param {Range} range
- */
-function getNormalizedOffset(parent, range) {
-  let stack = [parent]
-  let offset = 0
-
-  // Iterate child nodes with a stack instead of recursion.
-  while (stack.length) {
-    const node = stack.pop()
-    // When the current node is the range's start node, we're done.
-    if (node === range.startContainer) {
-      return offset + range.startOffset
-    }
-
-    if (node.nodeType === Node.TEXT_NODE) {
-      // Add the node text length to the running offset.
-      offset += node.nodeValue.length
-    } else if (node.nodeType === Node.ELEMENT_NODE) {
-      // Prepare to iterate this node's children.
-      const childNodes = Array.prototype.slice.call(node.childNodes, 0)
-      stack = stack.concat(childNodes.reverse())
-    }
-  }
-
-  return -1
-}
