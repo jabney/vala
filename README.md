@@ -11,6 +11,8 @@ Generate HTML markup for highlighting segments of text
 
 **Under development**
 
+Includes a jQuery plugin
+
 See the [demo source](https://github.com/jabney/vala/tree/master/demo/src) folder for example usage.
 
-Open [index.html](https://github.com/jabney/vala/tree/master/demo/dist) in the [dist](https://github.com/jabney/vala/tree/master/demo/dist) folder to see the demo project in action. (Switch highlight styles with the 1, 2, and 3 keys).
+Open [index.html](https://github.com/jabney/vala/tree/master/demo/dist) in the [dist](https://github.com/jabney/vala/tree/master/demo/dist) folder to see the demo project in action.
