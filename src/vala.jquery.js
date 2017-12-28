@@ -1,4 +1,4 @@
-/// <reference path="declarations.d.ts" />
+/// <reference path="vala.jquery.d.ts" />
 
 (function ($) {
   'use strict'
