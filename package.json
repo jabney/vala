@@ -28,6 +28,8 @@
     "@types/jest": "^21.1.10",
     "babel-jest": "^22.0.4",
     "babel-preset-env": "^1.6.1",
+    "file-loader": "^1.1.6",
+    "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
     "jest": "^22.0.3",
     "jquery": "^3.2.1",
@@ -36,7 +38,11 @@
   },
   "files": [
     "vala.js",
-    "demo"
+    "vala.d.ts",
+    "demo",
+    "dist"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "clean-webpack-plugin": "^0.1.17"
+  }
 }
