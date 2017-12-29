@@ -216,8 +216,9 @@ of the container with the highlight markup.
 // These are the default options.
 const options = {
   host: '.vala-host', // the host selector
-  cls: 'vala'         // the default class for all highlights
-  useTagData: true    // Preprocess the dom for 'data-vala' attributes
+  cls: 'vala',        // the default class for all highlights
+  useTagData: true,   // Preprocess the dom for 'data-vala' attributes
+  trimText: true      // Trim a host's text before rendering highlights
 }
 
 const vala = $('body').vala(options, function (event, id, range) {...})
