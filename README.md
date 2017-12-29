@@ -228,7 +228,7 @@ Vala hosts can be preconfigured with hightlight data if desired.
 
 ```html
 <span class="vala-host"
-  data-vala='[{"start": 26, "length": 7, "tag": "em"}]'>
+  data-vala='[{"start": 19, "length": 7, "tag": "em"}]'>
   Listen, Mr. Kansas Law Dog. Law don't go around here. Savvy?
 </span>
 ```
