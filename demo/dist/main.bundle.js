@@ -126,7 +126,11 @@ $(document).on('keyup', function (e) {
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/// <reference path="./vala.d.ts" />
 
 /**
  * @typedef {Object} Segment
@@ -145,7 +149,6 @@ $(document).on('keyup', function (e) {
  * @param {string} [defaultClass]
  */
 function vala(text, segments, defaultClass) {
-  'use strict'
 
   if (!(Array.isArray(segments) && segments.length)) {
     return text
