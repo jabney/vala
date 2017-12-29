@@ -102,7 +102,7 @@
      * Set highlights from data-vala tags, if any.
      */
     function processTagData() {
-      $('.vala-host[data-vala]').each(function () {
+      $(opts.host + '[data-vala]').each(function () {
         const data = JSON.parse(this.dataset.vala)
         if (Array.isArray(data)) {
           this.innerHTML = vala($(this).text(), data, opts.cls)
