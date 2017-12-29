@@ -1,6 +1,6 @@
 {
   "name": "vala",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Generate HTML markup for highlighting segments of text",
   "main": "vala.js",
   "types": "vala.d.ts",
