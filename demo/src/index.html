@@ -10,6 +10,7 @@
   <style>
     li { margin: 10px; }
     .logo { text-align: center; }
+    .logo img { width: 120px; }
     p.host, p.vala-host { line-height: 1.3; }
     .indicator span { cursor: auto; }
     .vala, .vala-jq { cursor: pointer; }
@@ -26,15 +27,20 @@
   <h2>Without jQuery Plugin</h2>
   <p class="host">We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.</p>
   <h2>With jQuery Plugin</h2>
-  <p class="vala-host">We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.</p>
-  <p class="vala-host">We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.</p>
+  <p class="vala-host">If we find ourselves with a desire that nothing in this world can satisfy, the most probable explanation is that we were made for another world.</p>
+  <p class="vala-host">Tradition means giving votes to the most obscure of all classes, our ancestors. It is the democracy of the dead. Tradition refuses to submit to the small and arrogant oligarchy of those who merely happen to be walking about.</p>
   <div class="indicator">Current highlight style: <span></span></div>
   <h3>Usage</h3>
   <ul>
     <li class="vala-host" data-vala='[{"start": 26, "length": 6, "cls": "highlight"}]'>Select a range of text to create a vala highlight.</li>
     <li class="vala-host" data-vala='[{"start": 19, "length": 6, "cls": "underline"}]'>Use numbers 1-3 to change highlight styles.</li>
     <li class="vala-host" data-vala='[{"start": 34, "length": 6, "cls": "overline"}]'>Click on an existing highlight to delete it.</li>
+    <li class="vala-host"
+      data-vala='[{"start": 26, "length": 7, "tag": "em"}]'>
+      Listen, Mr. Kansas Law Dog. Law don't go around here. Savvy?
+    </li>
   </ul>
+
   <script>
     /*
      * jQuery plugin script
