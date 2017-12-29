@@ -1,3 +1,6 @@
+'use strict'
+/// <reference path="./vala.d.ts" />
+
 /**
  * @typedef {Object} Segment
  * @property {number} start
@@ -15,7 +18,6 @@
  * @param {string} [defaultClass]
  */
 function vala(text, segments, defaultClass) {
-  'use strict'
 
   if (!(Array.isArray(segments) && segments.length)) {
     return text
