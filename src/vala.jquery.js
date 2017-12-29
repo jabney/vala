@@ -51,9 +51,7 @@
       processTagData()
     }
 
-    this.find(opts.host).each(function (e) {
-      $(this).on('mouseup', mouseup)
-    })
+    monitor()
 
     function mouseup(e) {
       var self = this
@@ -88,6 +86,16 @@
           this.innerHTML = vala($(this).text(), result, opts.cls)
         }
       }
+    }
+
+    /**
+     * Listen for mouseup on all host containers.
+     */
+    function monitor() {
+      this.find(opts.host).each(function (e) {
+        $(this).off('mouseup', mouseup)
+        $(this).on('mouseup', mouseup)
+      })
     }
 
     /**
@@ -132,7 +140,14 @@
        *
        * @function
        */
-      processTagData: processTagData
+      processTagData: processTagData,
+
+      /**
+       * Listen for mouseup on all host containers.
+       *
+       * @function
+       */
+      monitor: monitor
     }
   }
 
