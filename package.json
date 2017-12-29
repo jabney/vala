@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "description": "Generate HTML markup for highlighting segments of text",
   "main": "vala.js",
+  "types": "vala.d.ts",
   "scripts": {
     "start": "npm run build-jquery & npm run build-demo",
     "build-jquery": "webpack --watch --config webpack.jquery.js",
@@ -24,6 +25,9 @@
   },
   "homepage": "https://github.com/jabney/vala#readme",
   "devDependencies": {
+    "@types/jest": "^21.1.10",
+    "babel-jest": "^22.0.4",
+    "babel-preset-env": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
     "jest": "^22.0.3",
     "jquery": "^3.2.1",
@@ -33,5 +37,6 @@
   "files": [
     "vala.js",
     "demo"
-  ]
+  ],
+  "dependencies": {}
 }
