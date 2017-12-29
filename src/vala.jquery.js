@@ -92,7 +92,7 @@
      * Listen for mouseup on all host containers.
      */
     function monitor() {
-      this.find(opts.host).each(function (e) {
+      self.find(opts.host).each(function (e) {
         $(this).off('mouseup', mouseup)
         $(this).on('mouseup', mouseup)
       })
@@ -104,7 +104,7 @@
     function processTagData() {
       $(opts.host + '[data-vala]').each(function () {
         const data = JSON.parse(this.dataset.vala)
-        if (Array.isArray(data)) {
+          if (Array.isArray(data)) {
           this.innerHTML = vala($(this).text(), data, opts.cls)
         }
       })
