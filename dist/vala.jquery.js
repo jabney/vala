@@ -120,9 +120,7 @@
       processTagData()
     }
 
-    this.find(opts.host).each(function (e) {
-      $(this).on('mouseup', mouseup)
-    })
+    monitor()
 
     function mouseup(e) {
       var self = this
@@ -160,12 +158,22 @@
     }
 
     /**
+     * Listen for mouseup on all host containers.
+     */
+    function monitor() {
+      self.find(opts.host).each(function (e) {
+        $(this).off('mouseup', mouseup)
+        $(this).on('mouseup', mouseup)
+      })
+    }
+
+    /**
      * Set highlights from data-vala tags, if any.
      */
     function processTagData() {
-      $('.vala-host[data-vala]').each(function () {
+      $(opts.host + '[data-vala]').each(function () {
         const data = JSON.parse(this.dataset.vala)
-        if (Array.isArray(data)) {
+          if (Array.isArray(data)) {
           this.innerHTML = vala($(this).text(), data, opts.cls)
         }
       })
@@ -201,7 +209,14 @@
        *
        * @function
        */
-      processTagData: processTagData
+      processTagData: processTagData,
+
+      /**
+       * Listen for mouseup on all host containers.
+       *
+       * @function
+       */
+      monitor: monitor
     }
   }
 
@@ -217,7 +232,11 @@
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/// <reference path="./vala.d.ts" />
 
 /**
  * @typedef {Object} Segment
@@ -236,7 +255,6 @@
  * @param {string} [defaultClass]
  */
 function vala(text, segments, defaultClass) {
-  'use strict'
 
   if (!(Array.isArray(segments) && segments.length)) {
     return text
