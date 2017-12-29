@@ -77,6 +77,7 @@
    * @property {string} host
    * @property {string} cls
    * @property {boolean} useTagData
+   * @property {boolean} trimText
    *
    * @typedef {Object} RangeInfo
    * @property {number} start
@@ -102,7 +103,8 @@
   var defaults = {
     host: '.vala-host',
     cls: 'vala',
-    useTagData: true
+    useTagData: true,
+    trimText: true
   }
 
   /**
@@ -144,17 +146,22 @@
           end: end,
           str: str
         }, function done(result) {
-          self.innerHTML = vala($(self).text(), result, opts.cls)
+          self.innerHTML = render($(self).text(), result)
         })
 
         if (result && typeof result.then === 'function') {
           result.then(function(highlights) {
-            self.innerHTML = vala($(self).text(), highlights, opts.cls)
+            self.innerHTML = render($(self).text(), highlights)
           })
         } else if (Array.isArray(result)) {
-          this.innerHTML = vala($(this).text(), result, opts.cls)
+          this.innerHTML = render($(this).text(), result)
         }
       }
+    }
+
+    function render(text, highlights) {
+      if (opts.trimText) { text = text.trim() }
+      return vala(text, highlights, opts.cls)
     }
 
     /**
