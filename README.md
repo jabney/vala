@@ -1,4 +1,6 @@
 # Vala
+[![Build Status](https://travis-ci.org/jabney/vala.svg?branch=master)](https://travis-ci.org/jabney/vala)
+
 Generate HTML markup for highlighting segments of text
 
 <!-- <div style="color: gray; background-color: white; padding: 0.5rem; font-family: monospace; font-size: 16px;">
