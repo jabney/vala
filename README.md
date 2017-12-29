@@ -170,6 +170,16 @@ Configure the plugin:
   const vala = $('body').vala({},
     // The callback is issued whenever the user selects text
     // in a vala host element.
+    //
+    // The 'event' argument contains the jquery mouseup event.
+    //
+    // The 'id' argument contains a unique, monotonic highlight id.
+    //
+    // The 'range' argument contains data about the selection,
+    // including its start and end offsets, and the selected substring.
+    //
+    // The 'done' argument is a callback that can be issued for
+    // asynchronous behavior.
     function (event, id, range, done) {
       // Either return a list of highlights...
       return [{
