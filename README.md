@@ -228,14 +228,14 @@ result
 ```html
 <span class="vala-host">
   Listen, Mr. Kansas
-  <em class="vala-jq">Law Dog</em>
+  <em class="vala">Law Dog</em>
   . Law don't go around here. Savvy?
 </span>
 ```
 
 <span class="vala-host">
   Listen, Mr. Kansas
-  <em class="vala-jq">Law Dog</em>
+  <em class="vala">Law Dog</em>
   . Law don't go around here. Savvy?
 </span>
 
