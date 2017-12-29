@@ -194,10 +194,11 @@
        * @function
        * @param {string} text
        * @param {Highlight[]} highlights
+       * @param {string} defaultClass
        * @returns {string}
        */
-      render: function (text, highlights) {
-        return vala(text, highlights, opts.cls)
+      render: function (text, highlights, defaultClass) {
+        return vala(text, highlights, defaultClass)
       },
 
       /**
