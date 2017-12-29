@@ -194,10 +194,12 @@
        * @function
        * @param {string} text
        * @param {Highlight[]} highlights
-       * @param {string} defaultClass
+       * @param {string} [defaultClass]
        * @returns {string}
        */
       render: function (text, highlights, defaultClass) {
+        defaultClass = typeof defaultClass === 'undefined'
+          ? opts.cls : defaultClass
         return vala(text, highlights, defaultClass)
       },
 
