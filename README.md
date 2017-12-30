@@ -260,6 +260,9 @@ const vala = $('body').vala({}, function (event, id, range) {...})
 
 ```javascript
 const markup = vala.render('one two three four', [{start: 8, length: 5}])
+// The render method can also take a third argument, defaultClass.
+// Leave this undefined to use the plugin's default class. Set to null
+// to use no default class.
 ```
 
 markup
