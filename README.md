@@ -225,7 +225,7 @@ const vala = $('body').vala(options, function (event, id, range) {...})
 ```
 
 #### `data-vala` attributes
-Vala hosts can be preconfigured with hightlight data if desired.
+Vala hosts can be preconfigured with hightlight data if desired; just make sure it's in JSON format.
 
 ```html
 <span class="vala-host"
