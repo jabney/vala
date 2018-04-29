@@ -1,5 +1,4 @@
 'use strict'
-/// <reference path="./vala.d.ts" />
 
 /**
  * @typedef {Object} Segment

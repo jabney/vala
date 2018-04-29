@@ -1,5 +1,3 @@
-/// <reference path="vala.jquery.d.ts" />
-
 (function ($) {
   'use strict'
 
